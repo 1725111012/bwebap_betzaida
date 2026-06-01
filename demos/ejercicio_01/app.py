@@ -1,7 +1,9 @@
 import web
 
 urls = (
-    '/', 'Index'
+    '/', 'Index',
+    '/clientes', 'Clientes', 
+    '/usuarios', 'Usuarios', 
 )
 app = web.application(urls, globals())
 render = web.template.render('templates')
