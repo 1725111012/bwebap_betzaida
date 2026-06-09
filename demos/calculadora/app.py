@@ -17,7 +17,11 @@ class Calculadora:
     
     def POST(self):
             formulario = web.input()
-            return f"Formulario: {formulario}"
+            numero_1 = int(formulario.numero_1)
+            numero_2 = int(formulario.numero_2)
+            resultado = numero_1 + numero_2 
+
+            return f"Numero 1: {numero_1}, Numero 2: {numero_2}, Resultado: {resultado}"
 
 if __name__ == "__main__":
     app.run()
