@@ -23,6 +23,7 @@ class Calculadora:
     def POST(self):
             formulario = web.input()
             operacion = formulario.get('operacion')
+            
             if operacion == "limpiar":
                 return render.calculadora(0.0, 0.0, 0.0)
             
@@ -32,26 +33,21 @@ class Calculadora:
             
             if operacion == "sumar":
                 resultado = numero_1 + numero_2
+            
             elif operacion == "restar":
-
                 resultado = numero_1 - numero_2
+            
             elif operacion == "multiplicar":
                 resultado = numero_1 * numero_2
-
+            
             elif operacion == "dividir":
-                if numero_2 != 0:
-                    resultado = numero_1 / numero_2
-                else:
-                    resultado = "Error: Div entre 0"
-
+                resultado = numero_1 / numero_2
+            
             elif operacion == "potencia":
                 resultado = numero_1 ** numero_2
             
             elif operacion == "raiz":
-                if numero_1 >= 0:
-                    resultado = math.sqrt(numero_1)
-                else:
-                    resultado = "Error: Raíz negativa"
+                resultado = numero_1 ** 0.5 
             
             elif operacion == "modulo":
                 resultado = numero_1 % numero_2
